@@ -1,6 +1,57 @@
-$color: red;
+// Reset all element padding and margin.
 
-
-nav ul li a {
-    color: $color;
+* {
+    margin: 0;
+    padding: 0;
 }
+
+
+// Variables
+
+$primaryColor: rgb(211, 195, 57);
+$secondaryColor: black;
+
+
+// Mobile styles
+
+@media screen and (min-width: 360px){
+
+    // Header styles
+
+    #header {
+        background-color: $primaryColor;
+        height: 50px;
+        overflow: hidden;
+    } 
+
+    #mobile-menu-icon {
+        float: right;
+        font-size: 2.5em;
+        padding-top: 5px;
+        padding-right: 5px; 
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul li {
+        padding-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    nav ul li a {
+        color: $secondaryColor;
+        text-decoration: none;
+    }
+
+    .dropMenu {
+        height: 300px;
+        background-color: red;
+    }
+}
+
+
+
+// @media screen and (min)
+
