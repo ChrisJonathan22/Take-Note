@@ -24,7 +24,7 @@ export default class Navbar extends Component {
       menuItems.style.transition = "padding 100s";
 
       header.style.height = "200px";
-      header.style.transition = "height 3s";
+      header.style.transition = "height 2s";
     }
 
     else {
