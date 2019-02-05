@@ -14,7 +14,7 @@ $secondaryColor: black;
 
 // Mobile styles
 
-@media screen and (min-width: 360px){
+@media screen and (min-width: 360px) and (max-width: 767px){
 
     // Header styles
 
@@ -51,7 +51,4 @@ $secondaryColor: black;
     }
 }
 
-
-
-// @media screen and (min)
-
+// Mobile styles end.

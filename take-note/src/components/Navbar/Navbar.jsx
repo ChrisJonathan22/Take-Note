@@ -46,7 +46,6 @@ export default class Navbar extends Component {
                       </li>
                       <li>
                       <a><NavLink exact to ='/about'>About</NavLink></a>
-                        {/* <a href="/about">About</a> */}
                       </li>
                   </ul>
               </nav>

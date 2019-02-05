@@ -1,7 +1,19 @@
+// Variables.
+
+$primaryColor: rgb(211, 195, 57);
+$secondaryColor: black;
+
+// Variables end.
 #home-title {
     padding-top: 20px;
     text-align: center;
 }
+
+// Mobile styles.
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+
+// Form styles.
 
 #home-form {
     // text-align: center;
@@ -15,5 +27,29 @@
 }
 
 #home-form input, #home-form textarea {
-    border: 1px black solid;
+    border: 1px lightgrey solid;
 }
+
+#title, textarea {
+    margin-bottom: 10px;
+}
+
+#title::placeholder, textarea::placeholder {
+    color: black;
+}
+
+#button {
+    border: 0 !important;
+    border-radius: 5px;
+    background-color: $primaryColor;
+    color: white;
+    width: 50px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+// Form styles end.
+
+}
+// Mobile styles end.

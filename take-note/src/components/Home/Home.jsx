@@ -14,6 +14,8 @@ export default class Home extends Component {
             <label>Info</label>
             <br/>
             <textarea name="info" id="info" cols="30" rows="10" placeholder="Please enter some info..."></textarea>
+            <br/>
+            <input type="submit" value="Add" id="button"/>
         </form>
       </div>
     )
