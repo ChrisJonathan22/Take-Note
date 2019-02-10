@@ -24,5 +24,5 @@ const { connect } = require('./database');
 // Import model/ collection.
 const { notes } = require('./database');
 // Set the port number.
-const PORT = process.env.PORT | 5000;
+const PORT = 5000;
 console.log(`Your port is ${PORT}`);

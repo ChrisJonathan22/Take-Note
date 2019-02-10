@@ -51,6 +51,7 @@ export default class Home extends Component {
     return (
       <div>
         <h1 id="home-title">Take Note</h1>
+        <section id="container">
         {/* This is the form. */}
         <form id="home-form">
             <label>Title<span>*</span></label>
@@ -63,13 +64,14 @@ export default class Home extends Component {
             <br/>
             <input type="button" value="Add" id="button" onClick = {this.sendData}/>
         </form>
-        {/* This is where each note will be listed. */}
-        <section id="notes">
+         {/* This is where each note will be listed. */}
+         <section id="notes">
           <ul>
             <li>Home work</li>
             <li>Shopping</li>
             <li>Ring Alice</li>
           </ul>
+        </section>
         </section>
       </div>
     )
