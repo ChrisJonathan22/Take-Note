@@ -14,13 +14,17 @@ export default class Home extends Component {
 
   // Create a method called sendData to send notes to the database.
   sendData () {
-    let title = document.getElementById('title').value; // Store the value of title.
-    let info = document.getElementById('info').value; // Store the value of info.
-
+    let title = document.getElementById('title');  // Store the title element.
+    let info = document.getElementById('info'); // Store the info element.
     this.setState({
-      title: title,   // Use the title value and the info value to populate the state.
-      info: info
+      title: title.value,   // Use the title value and the info value to populate the state.
+      info: info.value
     });
+    title.value = ""; // Reset the title value.
+    info.value = "";  // Reset the info value.
+    title.placeholder = "Please enter a title..."; // Reset the title placeholder.
+    info.placeholder = "Please enter some info..."; // Reset the info placerholder.
+
     // Generate the date and time of when the note was created.
     let date = new Date(); // Create a new Date object.
     let day = date.getDate(); // Get the day.
@@ -48,10 +52,6 @@ export default class Home extends Component {
     })
     .then((res) => {
       console.log('Data send!');  // Log this message if the data has been sent successfully.
-    })
-    .then(() => {
-      title.value = " ";
-      info.value = " ";
     });
   }
 

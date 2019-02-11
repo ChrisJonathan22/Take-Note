@@ -10,15 +10,15 @@ const app = express();
 // Middlewares.
 app.use(bodyParser.json({limit: '15mb', extended: true}));
 
-// app.use(cors());
+app.use(cors());
 
-// app.use((req, res, next) => {   // Allow cross origin requests.
-//         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
-//         res.header("Access-Control-Allow-Origin", "*");
-//         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//         res.header("Access-Control-Allow-Credentials", true);
-//         next();
-// });
+app.use((req, res, next) => {   // Allow cross origin requests.
+        res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.header("Access-Control-Allow-Credentials", true);
+        next();
+});
 
 // Import database.
 const { connect } = require('./database');
@@ -37,6 +37,7 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.post('/api/addNote',(req, res) => {
+    console.log("Note added");
     res.json({message: "Note added"});
 });
 
