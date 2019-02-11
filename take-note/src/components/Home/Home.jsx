@@ -21,11 +21,20 @@ export default class Home extends Component {
       title: title,   // Use the title value and the info value to populate the state.
       info: info
     });
+    // Generate the date and time of when the note was created.
+    let date = new Date(); // Create a new Date object.
+    let day = date.getDate(); // Get the day.
+    let month = date.getMonth() + 1;  // Get the month.
+    let year = date.getFullYear();  // Get the year.
+    let hours = date.getHours();  // Get the hours.
+    let minutes = date.getMinutes();  // Get the minutes.
+    let dateAndTime = `${day}/${month}/${year} - ${hours}:${minutes}`;  // Concatenate the date and the time.
 
-    // Create an object which will store the title value and also the info value which will then be sent to the database.
+    // Create an object which will store the title value, the info value and the date + time which will then be sent to the database.
     let note = {
       title: this.state.title,
-      info: this.state.info
+      info: this.state.info,
+      timestamp: dateAndTime
     };
 
     // Create a fetch 'post' request to send the object containing the note data to the database.

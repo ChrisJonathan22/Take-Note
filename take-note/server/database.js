@@ -10,7 +10,8 @@ const connect = mongoose.connection;
 // Create a Schema or db structure.
 let noteSchema = new mongoose.Schema({
     title: String,
-    info: String
+    info: String,
+    date: String
 });
 
 // Create a model/ collection for the database.
