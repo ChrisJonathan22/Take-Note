@@ -38,6 +38,7 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/addNote',(req, res) => {
     console.log("Note added");
+    console.log(req.body);
     res.json({message: "Note added"});
 });
 
