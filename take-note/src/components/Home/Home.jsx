@@ -9,23 +9,14 @@ export default class Home extends Component {
       info: ""
     };
 
-    this.sendData = this.sendData.bind(this); // Initialise a method to send data.
+    this.sendData = this.sendData.bind(this); // This method will post the data.
+    this.clearInputValue = this.clearInputValue.bind(this); // This method will clear both the input fields.
+    this.resetInputPlaceholder = this.resetInputPlaceholder.bind(this); // This method will reset both input placeholders.
+    this.getDateAndTime = this.getDateAndTime.bind(this); // This method will save the current date and time.
   }
 
-  // Create a method called sendData to send notes to the database.
-  sendData () {
-    let title = document.getElementById('title');  // Store the title element.
-    let info = document.getElementById('info'); // Store the info element.
-    this.setState({
-      title: title.value,   // Use the title value and the info value to populate the state.
-      info: info.value
-    });
-    title.value = ""; // Reset the title value.
-    info.value = "";  // Reset the info value.
-    title.placeholder = "Please enter a title..."; // Reset the title placeholder.
-    info.placeholder = "Please enter some info..."; // Reset the info placerholder.
-
-    // Generate the date and time of when the note was created.
+  // This method will save the current date and time.
+  getDateAndTime () {
     let date = new Date(); // Create a new Date object.
     let day = date.getDate(); // Get the day.
     let month = date.getMonth() + 1;  // Get the month.
@@ -33,14 +24,40 @@ export default class Home extends Component {
     let hours = date.getHours();  // Get the hours.
     let minutes = date.getMinutes();  // Get the minutes.
     let dateAndTime = `${day}/${month}/${year} - ${hours}:${minutes}`;  // Concatenate the date and the time.
+    return dateAndTime;
+  }
+
+  // This method will clear both the input fields.
+  clearInputValue () {
+    document.getElementById('title').value = "";  // Clear the title value.
+    document.getElementById('info').value = ""; // Clear the info value.
+  }
+
+  // This method will reset both input placeholders.
+  resetInputPlaceholder () {
+    document.getElementById('title').placeholder = "Please enter a title..."; // Reset the title placeholder.
+    document.getElementById('info').placeholder = "Please enter some info..."; // Reset the info placerholder.
+  }
+
+
+  // Create a method called sendData to send notes to the database.
+  sendData () {
+    let titleValue = document.getElementById('title').value;  // Store the title value.
+    let infoValue = document.getElementById('info').value;  // Store the info value.
 
     // Create an object which will store the title value, the info value and the date + time which will then be sent to the database.
     let note = {
-      title: this.state.title,
-      info: this.state.info,
-      timestamp: dateAndTime
+      title: titleValue,
+      info: infoValue,
+      timestamp: this.getDateAndTime()
     };
-
+    // Log the object.
+    console.log(note);
+   
+    this.clearInputValue ();  // Clear the title & info values.
+    this.resetInputPlaceholder(); // Reset the title and info placeholders.
+    
+    
     // Create a fetch 'post' request to send the object containing the note data to the database.
     fetch('http://localhost:5000/api/addNote', {
       method: 'post',
