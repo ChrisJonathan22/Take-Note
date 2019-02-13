@@ -32,14 +32,25 @@ connect.once('open', () => {
 });
 
 // Routes.
-app.get('/api/notes', (req, res) => {
-    res.json({message: "Success!"});
+app.get('/api/notes', (req, res) => {   // Receive get requests to this path and return the notes found if there are any.
+    notes.find((err, notes) => {
+        if (err) console.log(err);  // If there is an error log it out.
+        else {
+            console.log("Notes were requested...");
+            return res.json(notes); // Return the notes found.
+        }
+    });
 });
 
-app.post('/api/addNote',(req, res) => {
-    console.log("Note added");
-    console.log(req.body);
-    res.json({message: "Note added"});
+app.post('/api/addNote',(req, res) => { // Receive post requests to this path and save notes accordingly.
+    // Create a new note and populate it with the data received.
+    let note = new notes({ title: req.body.title, info: req.body.info, timestamp: req.body.timestamp });    
+    note.save((err, notes) => { // Save the new note.
+        if(err) console.log(err);   // If there is an error log it out.
+        else {
+            console.log("New note successfully added...");
+        }
+    });
 });
 
 // const dotenv = require('dotenv');

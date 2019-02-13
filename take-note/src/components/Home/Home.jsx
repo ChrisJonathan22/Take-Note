@@ -42,15 +42,13 @@ export default class Home extends Component {
 
   // Create a method called sendData to send notes to the database.
   sendData () {
-    let titleValue = document.getElementById('title').value;  // Store the title value.
-    let infoValue = document.getElementById('info').value;  // Store the info value.
-
     // Create an object which will store the title value, the info value and the date + time which will then be sent to the database.
     let note = {
-      title: titleValue,
-      info: infoValue,
+      title: document.getElementById('title').value,  // Store the title value.
+      info: document.getElementById('info').value,  // Store the info value.
       timestamp: this.getDateAndTime()
     };
+    
     // Log the object.
     console.log(note);
    

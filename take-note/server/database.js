@@ -11,7 +11,7 @@ const connect = mongoose.connection;
 let noteSchema = new mongoose.Schema({
     title: String,
     info: String,
-    date: String
+    timestamp: String
 });
 
 // Create a model/ collection for the database.
