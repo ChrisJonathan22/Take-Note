@@ -42,7 +42,17 @@ export default class Home extends Component {
 
   // Create a method called sendData to send notes to the database.
   sendData () {
-    // Create an object which will store the title value, the info value and the date + time which will then be sent to the database.
+
+    if(document.getElementById('title').value == "") {
+      
+      document.getElementById('title').style.borderColor = "red";
+        return "Please enter the required information";
+    }
+    else if (document.getElementById('info').value == "") {
+      return "Please enter the required information";
+    }
+    else {
+        // Create an object which will store the title value, the info value and the date + time which will then be sent to the database.
     let note = {
       title: document.getElementById('title').value,  // Store the title value.
       info: document.getElementById('info').value,  // Store the info value.
@@ -68,6 +78,7 @@ export default class Home extends Component {
     .then((res) => {
       console.log('Data send!');  // Log this message if the data has been sent successfully.
     });
+    }
   }
 
 
@@ -80,7 +91,7 @@ export default class Home extends Component {
         <form id="home-form">
             <label>Title<span>*</span></label>
             <br/>
-            <input type="text" name="title" id="title" placeholder="Please enter a title..."/>
+            <input type="text" name="title" id="title" placeholder="Please enter a title..." autocomplete="off"/>
             <br/>
             <label>Info<span>*</span></label>
             <br/>

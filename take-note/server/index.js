@@ -45,6 +45,7 @@ app.get('/api/notes', (req, res) => {   // Receive get requests to this path and
 app.post('/api/addNote',(req, res) => { // Receive post requests to this path and save notes accordingly.
     // Create a new note and populate it with the data received.
     let note = new notes({ title: req.body.title, info: req.body.info, timestamp: req.body.timestamp });    
+    console.log(note);
     note.save((err, notes) => { // Save the new note.
         if(err) console.log(err);   // If there is an error log it out.
         else {
