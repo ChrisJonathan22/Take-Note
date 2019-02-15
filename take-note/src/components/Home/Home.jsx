@@ -43,12 +43,12 @@ export default class Home extends Component {
   // Create a method called sendData to send notes to the database.
   sendData () {
 
-    if(document.getElementById('title').value == "") {
+    if(document.getElementById('title').value === "") {
       
       document.getElementById('title').style.borderColor = "red";
         return "Please enter the required information";
     }
-    else if (document.getElementById('info').value == "") {
+    else if (document.getElementById('info').value === "") {
       return "Please enter the required information";
     }
     else {
@@ -85,13 +85,14 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <div id="push-down"></div>
         <h1 id="home-title">Take Note</h1>
         <section id="container">
         {/* This is the form. */}
         <form id="home-form">
             <label>Title<span>*</span></label>
             <br/>
-            <input type="text" name="title" id="title" placeholder="Please enter a title..." autocomplete="off"/>
+            <input type="text" name="title" id="title" placeholder="Please enter a title..." autoComplete="off"/>
             <br/>
             <label>Info<span>*</span></label>
             <br/>

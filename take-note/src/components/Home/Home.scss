@@ -1,3 +1,6 @@
+// Reset padding and margin
+
+
 // Variables.
 
 $primaryColor: rgb(211, 195, 57);
@@ -12,6 +15,13 @@ $secondaryColor: black;
 // Mobile styles.
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+
+// Push down will push the content slightly down so that it's not partially covered by the menu bar.
+
+#push-down {
+    padding-bottom: 47px;
+}
+// Push down styles end.    
 
 // Container styles.
 
@@ -31,22 +41,22 @@ $secondaryColor: black;
     
 }
 
-#home-form #title, #home-form #info {
+#home-form input, #home-form textarea {
     margin-top: 10px;
-    font-size: 1em;
+    margin-left: 30px;
+    border-radius: 3px;
+    border: 1px lightgrey solid;
+    font-size: 0.9em;
 }
 
-#home-form label, #home-form input, #home-form textarea {
+#home-form label {
+    font-weight: 800;
     margin-left: 30px;
     border-radius: 3px;
 }
 
 #home-form label span {
     color: red;
-}
-
-#home-form input, #home-form textarea {
-    border: 1px lightgrey solid;
 }
 
 #home-form input {
@@ -64,6 +74,7 @@ $secondaryColor: black;
 
 #title::placeholder, textarea::placeholder {
     color: black;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #button {

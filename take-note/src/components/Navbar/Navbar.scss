@@ -3,10 +3,11 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
-// Variables
+// Variables.
 
 $primaryColor: rgb(211, 195, 57);
 $secondaryColor: black;
@@ -16,12 +17,14 @@ $secondaryColor: black;
 
 @media screen and (min-width: 360px) and (max-width: 767px){
 
-    // Header styles
+    // Header styles.
 
     #header {
         background-color: $primaryColor;
         height: 50px;
+        width: 100%;
         overflow: hidden;
+        position: absolute;
     } 
 
     #mobile-menu-icon {
@@ -48,7 +51,11 @@ $secondaryColor: black;
     .dropMenu {
         height: 300px;
         background-color: red;
+        position: absolute;
+        z-index: 100;
     }
+
+    // Header styles end.
 }
 
 // Mobile styles end.
