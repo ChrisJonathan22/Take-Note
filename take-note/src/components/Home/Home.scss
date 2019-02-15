@@ -7,10 +7,6 @@ $primaryColor: rgb(211, 195, 57);
 $secondaryColor: black;
 
 // Variables end.
-#home-title {
-    padding: 20px 0 20px 0;
-    text-align: center;
-}
 
 // Mobile styles.
 
@@ -31,6 +27,11 @@ $secondaryColor: black;
 }
 
 // End of Container styles.
+
+#home-title {
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
 
 // Form styles.
 
@@ -66,6 +67,7 @@ $secondaryColor: black;
 
 #home-form textarea {
     width: 200px;
+    // border: 1px red solid;
 }
 
 #title, textarea {

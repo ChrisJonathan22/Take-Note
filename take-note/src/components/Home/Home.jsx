@@ -43,13 +43,10 @@ export default class Home extends Component {
   // Create a method called sendData to send notes to the database.
   sendData () {
 
-    if(document.getElementById('title').value === "") {
-      
+    if(document.getElementById('title').value === "" || document.getElementById('info').value === "") {
+      document.getElementById('info').style.borderColor = "red";
       document.getElementById('title').style.borderColor = "red";
         return "Please enter the required information";
-    }
-    else if (document.getElementById('info').value === "") {
-      return "Please enter the required information";
     }
     else {
         // Create an object which will store the title value, the info value and the date + time which will then be sent to the database.
