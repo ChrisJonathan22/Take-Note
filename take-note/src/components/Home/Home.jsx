@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Notes from '../Notes/Notes';
 import './Home.scss';
 
 export default class Home extends Component {
@@ -13,6 +14,7 @@ export default class Home extends Component {
     this.clearInputValue = this.clearInputValue.bind(this); // This method will clear both the input fields.
     this.resetInputPlaceholder = this.resetInputPlaceholder.bind(this); // This method will reset both input placeholders.
     this.getDateAndTime = this.getDateAndTime.bind(this); // This method will save the current date and time.
+    this.resetBorderColor = this.resetBorderColor.bind(this); // This method will be triggered when a user starts typing a title or some info and it will reset the border color to lightgrey.
   }
 
   // This method will save the current date and time.
@@ -39,16 +41,21 @@ export default class Home extends Component {
     document.getElementById('info').placeholder = "Please enter some info..."; // Reset the info placerholder.
   }
 
+  // This method resets the title and textarea border color to lightgrey when a user starts typing.
+  resetBorderColor (e) {
+      // e.target represents the element which triggered the event and
+      // the element responsible will have its borderColor changed to lightgrey.
+      e.target.style.borderColor = "lightgrey"; 
+  }
 
   // Create a method called sendData to send notes to the database.
   sendData () {
 
-    if(document.getElementById('title').value === "" || document.getElementById('info').value === "") {
-      document.getElementById('info').style.borderColor = "red";
-      document.getElementById('title').style.borderColor = "red";
-        return "Please enter the required information";
+    if(document.getElementById('title').value === "" || document.getElementById('info').value === "") { // If the title or the info is empty do this.
+      document.getElementById('title').style.borderColor = "red"; // Change the title's border color to red.
+      document.getElementById('info').style.borderColor = "red";  // Change the info's border color to red.
     }
-    else {
+    else {  // If the title and info aren't empty do this.
         // Create an object which will store the title value, the info value and the date + time which will then be sent to the database.
     let note = {
       title: document.getElementById('title').value,  // Store the title value.
@@ -89,22 +96,16 @@ export default class Home extends Component {
         <form id="home-form">
             <label>Title<span>*</span></label>
             <br/>
-            <input type="text" name="title" id="title" placeholder="Please enter a title..." autoComplete="off"/>
+            <input type="text" name="title" id="title" placeholder="Please enter a title..." onKeyDown = {this.resetBorderColor} autoComplete="off"/>
             <br/>
             <label>Info<span>*</span></label>
             <br/>
-            <textarea name="info" id="info" cols="30" rows="10" placeholder="Please enter some info..."></textarea>
+            <textarea name="info" id="info" cols="30" rows="10" placeholder="Please enter some info..." onKeyDown = {this.resetBorderColor}></textarea>
             <br/>
             <input type="button" value="Add" id="button" onClick = {this.sendData}/>
         </form>
          {/* This is where each note will be listed. */}
-         <section id="notes">
-          <ul>
-            <li>Home work</li>
-            <li>Shopping</li>
-            <li>Ring Alice</li>
-          </ul>
-        </section>
+          <Notes />
         </section>
       </div>
     )

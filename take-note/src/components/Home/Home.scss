@@ -1,6 +1,3 @@
-// Reset padding and margin
-
-
 // Variables.
 
 $primaryColor: rgb(211, 195, 57);
@@ -92,35 +89,6 @@ $secondaryColor: black;
 }
 
 // Form styles end.
-
-// Notes section styles.
-
-#notes {
-    width: 100%;
-    padding-top: 20px;
-}
-
-#notes ul {
-    padding-top: 20px;
-    width: 80%;
-    margin: 0 auto;
-    border: 1px grey solid;
-}
-
-#notes ul li {
-    text-align: left;
-    list-style: none;
-    margin-left: 95px;
-    padding-bottom: 5px;
-    color: $secondaryColor;
-}
-
-#notes ul li:hover {
-    color: $primaryColor;
-}
-
-
-// Notes section styles end.
 
 }
 // Mobile styles end.
