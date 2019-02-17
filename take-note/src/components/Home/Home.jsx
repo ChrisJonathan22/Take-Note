@@ -105,7 +105,9 @@ export default class Home extends Component {
             <input type="button" value="Add" id="button" onClick = {this.sendData}/>
         </form>
          {/* This is where each note will be listed. */}
-          <Notes />
+         <section id="notes-holder">
+            <Notes />
+         </section>
         </section>
       </div>
     )
