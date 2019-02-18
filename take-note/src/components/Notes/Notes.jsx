@@ -36,7 +36,13 @@ export default class Notes extends Component {
   }
 
     componentDidUpdate() {
-      this.fetchNotes();
+      // this.fetchNotes();
+      // if(this.state.notes.lenth < this.state.notes.length) {
+      //   this.fetchNotes();
+      // }
+      let number = 0;
+      console.log(`componentDidUpdate has ran ${number} amount of times`);
+      number++;
     }
   
 
