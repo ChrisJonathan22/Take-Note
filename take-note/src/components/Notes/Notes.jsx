@@ -7,9 +7,22 @@ export default class Notes extends Component {
     this.state = {
         notes: []
     };
-    this.fetchNotes = this.fetchNotes.bind(this);
+    this.fetchNotes = this.fetchNotes.bind(this); // This method will fetch and store notes inside the state.
+    this.getTitle = this.getTitle.bind(this); // This method will return the title of the list element clicked.
   }
  
+
+  getTitle (e) {
+    let title = e.target.value;
+    let url = "http://localhost:5000/api/notes/" + title;
+    console.log(e.target);
+  }
+
+  // componentDidMount() {
+  //   let url = "http://localhost:5000/api/notes/" + title;
+  //   fetch()
+  // }
+
   fetchNotes() {
       // This is requesting data from the api
       fetch('http://localhost:5000/api/notes')
@@ -33,7 +46,7 @@ export default class Notes extends Component {
         <section id="notes">
           <ul>
             {this.state.notes.map((note) => {
-              return <li key="{note.id}">{note.title}</li>;
+              return <li key="{note.id}" onClick={this.getTitle}>{note.title}</li>;
             })}
           </ul>
         </section>

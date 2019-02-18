@@ -42,6 +42,12 @@ app.get('/api/notes', (req, res) => {   // Receive get requests to this path and
     });
 });
 
+
+app.get('/api/notes/:noteTitle', (req, res) => {
+    console.log(req.params.noteTitle);
+    res.json({message: "Your request has been received."});
+});
+
 app.post('/api/addNote',(req, res) => { // Receive post requests to this path and save notes accordingly.
     // Create a new note and populate it with the data received.
     let note = new notes({ title: req.body.title, info: req.body.info, timestamp: req.body.timestamp });    
@@ -53,6 +59,8 @@ app.post('/api/addNote',(req, res) => { // Receive post requests to this path an
         }
     });
 });
+
+
 
 // const dotenv = require('dotenv');
 // dotenv.config();
