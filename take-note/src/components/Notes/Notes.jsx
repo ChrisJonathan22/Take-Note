@@ -18,11 +18,6 @@ export default class Notes extends Component {
     console.log(e.target);
   }
 
-  // componentDidMount() {
-  //   let url = "http://localhost:5000/api/notes/" + title;
-  //   fetch()
-  // }
-
   fetchNotes() {
       // This is requesting data from the api
       fetch('http://localhost:5000/api/notes')
@@ -36,13 +31,22 @@ export default class Notes extends Component {
   }
 
     componentDidUpdate() {
-      // this.fetchNotes();
-      // if(this.state.notes.lenth < this.state.notes.length) {
-      //   this.fetchNotes();
-      // }
-      let number = 0;
-      console.log(`componentDidUpdate has ran ${number} amount of times`);
-      number++;
+        // this.fetchNotes();
+
+      //   // This is requesting data from the api
+      //   fetch('http://localhost:5000/api/notes')
+      //   // I'm requesting data, turning the response which will be every found note to json and then I'm saving it to the state
+      //   .then(res => res.json())
+      //   .then((notesList) => {
+      //       if(notesList.length === this.state.notes.length) {
+      //         console.log("Nothing has changed");
+      //       }
+      //       else {
+      //         this.setState({ notes: notesList }, () => console.log("Notes have been updated"));
+      //       }
+      // });
+      this.fetchNotes();
+
     }
   
 
