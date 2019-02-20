@@ -3,11 +3,12 @@ import Notes from '../Notes/Notes';
 import './Home.scss';
 
 export default class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
-      info: ""
+      info: "",
+      list: []
     };
 
     this.sendData = this.sendData.bind(this); // This method will post the data.
@@ -64,7 +65,7 @@ export default class Home extends Component {
     };
     
     // Log the object.
-    console.log(note);
+    console.log(note + " This is a prop " + this.props.list);
    
     this.clearInputValue ();  // Clear the title & info values.
     this.resetInputPlaceholder(); // Reset the title and info placeholders.
@@ -80,11 +81,10 @@ export default class Home extends Component {
       body: JSON.stringify(note)  // Turn the note object to json.
     })
     .then((res) => {
-      console.log('Data send!');  // Log this message if the data has been sent successfully.
+      console.log('Data sent!');  // Log this message if the data has been sent successfully.
     });
     }
   }
-
 
   render() {
     return (
@@ -106,7 +106,8 @@ export default class Home extends Component {
         </form>
          {/* This is where each note will be listed. */}
          <section id="notes-holder">
-            <Notes />
+            {/* <Notes /> */}
+              <h1>{this.props.name}</h1>
          </section>
         </section>
       </div>

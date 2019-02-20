@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Home from '../Home/Home';
 import './Notes.scss';
 
 export default class Notes extends Component {
@@ -27,39 +28,25 @@ export default class Notes extends Component {
       ));
   }
     componentDidMount() {
-      this.fetchNotes();
+        this.fetchNotes();
   }
 
-    componentDidUpdate() {
-        // this.fetchNotes();
-
-      //   // This is requesting data from the api
-      //   fetch('http://localhost:5000/api/notes')
-      //   // I'm requesting data, turning the response which will be every found note to json and then I'm saving it to the state
-      //   .then(res => res.json())
-      //   .then((notesList) => {
-      //       if(notesList.length === this.state.notes.length) {
-      //         console.log("Nothing has changed");
-      //       }
-      //       else {
-      //         this.setState({ notes: notesList }, () => console.log("Notes have been updated"));
-      //       }
-      // });
-      this.fetchNotes();
-
+    componentDidUpdate(prevProps, prevState) {
+   
     }
   
 
   render() {
     return (
       <div>
-        <section id="notes">
+        {/* <section id="notes">
           <ul>
             {this.state.notes.map((note) => {
               return <li key="{note.id}" onClick={this.getTitle}>{note.title}</li>;
             })}
           </ul>
-        </section>
+        </section> */}
+        <Home name="Chris" />
       </div>
     )
   }
