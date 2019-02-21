@@ -106,8 +106,8 @@ export default class Home extends Component {
         </form>
          {/* This is where each note will be listed. */}
          <section id="notes-holder">
-            {/* <Notes /> */}
-              <h1>{this.props.name}</h1>
+            <Notes />
+              {/* <h1>{this.props.name}</h1> */}
          </section>
         </section>
       </div>
