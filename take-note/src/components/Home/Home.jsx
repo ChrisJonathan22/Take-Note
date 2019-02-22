@@ -8,8 +8,7 @@ export default class Home extends Component {
     super();
     this.state = {
       title: "",
-      info: "",
-      list: []
+      info: ""
     };
 
     this.sendData = this.sendData.bind(this); // This method will post the data.
@@ -66,7 +65,7 @@ export default class Home extends Component {
     };
     
     // Log the object.
-    console.log(note + " This is a prop " + this.props.list);
+    console.log(note);
    
     this.clearInputValue ();  // Clear the title & info values.
     this.resetInputPlaceholder(); // Reset the title and info placeholders.

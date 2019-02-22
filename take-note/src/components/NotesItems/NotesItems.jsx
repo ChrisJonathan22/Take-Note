@@ -4,7 +4,6 @@ import './NotesItems.scss';
 export default class NotesItems extends Component {
     constructor(props) {
         super(props);
-        console.log(this);
         this.getTitle = this.getTitle.bind(this); // This method will return the title of the list element clicked.
     }
 
@@ -16,7 +15,6 @@ export default class NotesItems extends Component {
     // Get the title then find out the id of the item.
     }
 
-    
   render() {
     return (
       <div>

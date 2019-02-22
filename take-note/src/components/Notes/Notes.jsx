@@ -6,8 +6,7 @@ export default class Notes extends Component {
   constructor() {
     super();
     this.state = {
-        notes: [],
-        latestNotes: []
+        notes: []
     };
     this.fetchNotes = this.fetchNotes.bind(this); // This method will fetch and store notes inside the state.
   }
@@ -21,23 +20,13 @@ export default class Notes extends Component {
       .then(notesList => this.setState({ notes: notesList }, () => console.log('Notes fetched...')
       ));
     }
+
     // When the component mounts do this.
     componentDidMount() {
         // Run the fetchNotes method.
         this.fetchNotes();
     }
 
-    componentDidUpdate() {
-      // this.fetchNotes();
-      // This is requesting data from the api
-      // fetch('http://localhost:5000/api/notes')
-      // // I'm requesting data, turning the response which will be every found note to json and then I'm saving it to the state
-      // .then(res => res.json())
-      // .then(notesList => this.setState({ latestNotes: notesList }, () => console.log('Notes fetched...')
-      // ));
-    }
-
-    
   
   render() {
     return (
