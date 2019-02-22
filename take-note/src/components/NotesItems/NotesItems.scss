@@ -1,0 +1,26 @@
+// Variables.
+
+$primaryColor: rgb(211, 195, 57);
+$secondaryColor: black;
+
+// Notes section styles.
+#notes ul {
+    padding-top: 50px;
+    width: auto;
+    // border: 1px grey solid;
+}
+
+#notes ul li {
+    text-align: left;
+    list-style: none;
+    padding-bottom: 10px;
+    padding-left: 70px;
+    color: $secondaryColor;
+    font-size: 1.5em;
+}
+
+#notes ul li:hover {
+    color: $primaryColor;
+}
+
+// Notes section styles end.

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Notes from '../Notes/Notes';
+import NotesItems from '../NotesItems/NotesItems'
 import './Home.scss';
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       title: "",
       info: "",
@@ -107,7 +108,6 @@ export default class Home extends Component {
          {/* This is where each note will be listed. */}
          <section id="notes-holder">
             <Notes />
-              {/* <h1>{this.props.name}</h1> */}
          </section>
         </section>
       </div>
