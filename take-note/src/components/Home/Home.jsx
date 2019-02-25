@@ -8,7 +8,8 @@ export default class Home extends Component {
     super();
     this.state = {
       title: "",
-      info: ""
+      info: "",
+      newItem: {}
     };
 
     this.sendData = this.sendData.bind(this); // This method will post the data.
@@ -66,7 +67,7 @@ export default class Home extends Component {
     
     // Log the object.
     console.log(note);
-   
+    this.setState({newItem: note});
     this.clearInputValue ();  // Clear the title & info values.
     this.resetInputPlaceholder(); // Reset the title and info placeholders.
     
@@ -106,7 +107,7 @@ export default class Home extends Component {
         </form>
          {/* This is where each note will be listed. */}
          <section id="notes-holder">
-            <Notes />
+            <Notes newNote = {this.state.newItem} />
          </section>
         </section>
       </div>
