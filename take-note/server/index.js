@@ -43,6 +43,9 @@ app.get('/api/notes', (req, res) => {   // Receive get requests to this path and
 });
 
 
+// Receive parameters like so localhost:5000/api/notes/Food which -
+// would return the item found matching the parameter 'Food'.
+// Parameter are accessed like so req.params.noteTitle .
 app.get('/api/notes/:noteTitle', (req, res) => {
     console.log(req.params.noteTitle);
     res.json({message: "Your request has been received."});

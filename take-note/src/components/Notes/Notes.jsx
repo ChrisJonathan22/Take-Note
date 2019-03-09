@@ -10,7 +10,6 @@ export default class Notes extends Component {
     };
     this.fetchNotes = this.fetchNotes.bind(this); // This method will fetch and store notes inside the state.
     // this.checkNotes = this.checkNotes.bind(this);
-    this.addNote = this.addNote.bind(this);
   }
 
     // Create a method to fetch notes from the database.
@@ -23,26 +22,18 @@ export default class Notes extends Component {
       ));
     }
 
-    // checkNotes() {
-    //   // This is requesting data from the api
-    //   fetch('http://localhost:5000/api/notes')
-    //   // I'm requesting data, turning the response which will be every found note to json and then I'm saving it to the state
-    //   .then(res => res.json())
-    //   .then(notesList => notesList , () => console.log('Notes fetched...'));
-    // }
-
-    addNote(item) {
-      this.state.note.push(item);
-    }
-
     // When the component mounts do this.
     componentDidMount() {
         // Run the fetchNotes method.
         this.fetchNotes();
     }
 
-    componentDidUpdate() {
-      addNote(this.props.newItem);
+    componentWillReceiveProps() {
+      // this.setState({notes: this.props.newNote});
+      let arr1 = this.state.notes;
+    arr1.push(this.props.newNote);
+    this.setState({notes: arr1});
+    console.log(this.state.notes);
     }
 
 

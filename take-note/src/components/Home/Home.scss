@@ -30,66 +30,6 @@ $secondaryColor: black;
     text-align: center;
 }
 
-// Form styles.
-
-#home-form {
-    // text-align: center;
-    width: 80%;
-    margin: 0 auto;
-    
-}
-
-#home-form input, #home-form textarea {
-    margin-top: 10px;
-    margin-left: 30px;
-    border-radius: 3px;
-    border: 1px lightgrey solid;
-    font-size: 0.9em;
-}
-
-#home-form label {
-    font-weight: 800;
-    margin-left: 30px;
-    border-radius: 3px;
-}
-
-#home-form label span {
-    color: red;
-}
-
-#home-form input {
-    height: 30px;
-    width: 200px;
-}
-
-#home-form textarea {
-    width: 200px;
-    // border: 1px red solid;
-}
-
-#title, textarea {
-    margin-bottom: 10px;
-}
-
-#title::placeholder, textarea::placeholder {
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-#button {
-    border: 0 !important;
-    border-radius: 5px;
-    background-color: $primaryColor;
-    color: white;
-    width: 60px !important;
-    height: 40px !important;
-    font-size: 20px;
-    font-weight: 900;
-    margin-left: 105px !important;
-}
-
-// Form styles end.
-
 // Notes holder.
 #notes-holder {
     width: 100%;

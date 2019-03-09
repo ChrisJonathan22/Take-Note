@@ -16,6 +16,9 @@ export default class NotesItems extends Component {
     }
 
   render() {
+    // let property = this.props.notes;
+    // let arr = [...property].push({name: 'Chris', lastName: 'Jonathan'});
+    // console.log(arr);
     return (
       <div>
         <section id="notes">
