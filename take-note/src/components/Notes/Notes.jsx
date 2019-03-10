@@ -28,15 +28,6 @@ export default class Notes extends Component {
         this.fetchNotes();
     }
 
-    componentWillReceiveProps() {
-      // this.setState({notes: this.props.newNote});
-      let arr1 = this.state.notes;
-    arr1.push(this.props.newNote);
-    this.setState({notes: arr1});
-    console.log(this.state.notes);
-    }
-
-
   
   render() {
     console.log(this.props);
@@ -44,7 +35,7 @@ export default class Notes extends Component {
       <div>
         {/* Render Notes along with the props from the state but only if the state isn't empty. */}
         {
-            this.state.notes ?  <NotesItems notes={this.state.notes} /> : console.log("There aren't any notes available.")
+            this.state.notes ?  <NotesItems notes={this.state.notes} note = {this.props.note} /> : console.log("There aren't any notes available.")
         }
       </div>
     )

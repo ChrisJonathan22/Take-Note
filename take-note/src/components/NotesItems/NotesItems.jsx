@@ -26,6 +26,7 @@ export default class NotesItems extends Component {
                 {this.props.notes.map((note) => {
                     return <li key={note.id} onClick={this.getTitle}>{note.title}</li>;
                 })}
+                {this.props.note ? <li key={this.props.note}>{this.props.note.title}</li> : null}
             </ul>
         </section>
       </div>
