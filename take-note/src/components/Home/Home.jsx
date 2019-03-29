@@ -20,7 +20,7 @@ export default class Home extends Component {
             <Form />
           {/* This is where each note will be listed. */}
          <section id="notes-holder">
-            <Notes />
+            {/* <Notes /> */}
          </section>
         </section>
       </div>

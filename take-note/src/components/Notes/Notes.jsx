@@ -26,16 +26,33 @@ export default class Notes extends Component {
     componentDidMount() {
         // Run the fetchNotes method.
         this.fetchNotes();
+        
     }
 
+    componentWillReceiveProps() {
+      // if a prop is received fetch new data.
+      this.fetchNewData();
+    }
+
+    fetchNewData() {
+      const { getData } = this.props;
+      if(getData === true) {
+        this.fetchNotes();
+      }
+      else {
+        console.log("No need to fetch.");
+      }
+    }
   
   render() {
+    const { notes } = this.state;  
+    const { note } = this.props;  
     console.log(this.props);
     return (
       <div>
         {/* Render Notes along with the props from the state but only if the state isn't empty. */}
         {
-            this.state.notes ?  <NotesItems notes={this.state.notes} note = {this.props.note} /> : console.log("There aren't any notes available.")
+            notes ?  <NotesItems notes={notes} note = {note} /> : console.log("There aren't any notes available.")
         }
       </div>
     )

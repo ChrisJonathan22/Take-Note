@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import AddedNote from '../AddedNote/AddedNote';
+import Notes from '../Notes/Notes';
+
 import './Form.scss';
 export default class Form extends Component {
     constructor() {
@@ -7,7 +9,8 @@ export default class Form extends Component {
         this.state = {
           title: "",
           info: "",
-          newItem: {}
+          newItem: {},
+          action: false
         };
     
         this.sendData = this.sendData.bind(this); // This method will post the data.
@@ -82,9 +85,11 @@ export default class Form extends Component {
       console.log('Data sent!');  // Log this message if the data has been sent successfully.
     });
     }
+    this.setState({ action: true });
   }  
 
   render() {
+    const { action } = this.state;
     return (
       <div>
         <form id="home-form">
@@ -98,7 +103,8 @@ export default class Form extends Component {
             <br/>
             <input type="button" value="Add" id="button" onClick = {this.sendData}/>
         </form>
-        <AddedNote newNote = {this.state.newItem} />
+        {/* <AddedNote newNote = {this.state.newItem} /> */}
+        <Notes getData={action} />
       </div>
     )
   }
