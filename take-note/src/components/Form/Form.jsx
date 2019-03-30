@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AddedNote from '../AddedNote/AddedNote';
 import Notes from '../Notes/Notes';
 
 import './Form.scss';
@@ -103,7 +102,6 @@ export default class Form extends Component {
             <br/>
             <input type="button" value="Add" id="button" onClick = {this.sendData}/>
         </form>
-        {/* <AddedNote newNote = {this.state.newItem} /> */}
         <Notes getData={action} />
       </div>
     )

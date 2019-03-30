@@ -29,9 +29,17 @@ export default class Notes extends Component {
         
     }
 
-    componentWillReceiveProps() {
-      // if a prop is received fetch new data.
-      this.fetchNewData();
+    // componentWillReceiveProps(prevProp) {
+    //   // if a prop is received fetch new data.
+    //   // this.fetchNewData();
+    //   this.fetchNotes();
+    // }
+
+    componentDidUpdate(prevProps) {
+      // Typical usage (don't forget to compare props):
+      if (this.props.getData !== prevProps.getData) {
+        this.fetchNotes();
+      }
     }
 
     fetchNewData() {

@@ -48,7 +48,13 @@ app.get('/api/notes', (req, res) => {   // Receive get requests to this path and
 // Parameter are accessed like so req.params.noteTitle .
 app.get('/api/notes/:noteTitle', (req, res) => {
     console.log(req.params.noteTitle);
-    res.json({message: "Your request has been received."});
+    if(req.params.noteTitle === 'hello') {
+    res.json({message: "Hello there! your request has been received."});
+    }
+
+    else {
+        res.json({message: "Your request doesn't match what I expected."});
+    }
 });
 
 app.post('/api/addNote',(req, res) => { // Receive post requests to this path and save notes accordingly.
