@@ -9,7 +9,6 @@ export default class Notes extends Component {
         notes: []
     };
     this.fetchNotes = this.fetchNotes.bind(this); // This method will fetch and store notes inside the state.
-    // this.checkNotes = this.checkNotes.bind(this);
   }
 
     // Create a method to fetch notes from the database.
@@ -24,43 +23,33 @@ export default class Notes extends Component {
 
     // When the component mounts do this.
     componentDidMount() {
-        // Run the fetchNotes method.
-        this.fetchNotes();
+      // Run the fetchNotes method.
+      this.fetchNotes();
         
     }
 
-    // componentWillReceiveProps(prevProp) {
-    //   // if a prop is received fetch new data.
-    //   // this.fetchNewData();
-    //   this.fetchNotes();
-    // }
-
     componentDidUpdate(prevProps) {
-      // Typical usage (don't forget to compare props):
-      if (this.props.getData !== prevProps.getData) {
-        this.fetchNotes();
+      let upDatedNotes;
+      const { notes } = this.state;
+      const { newNote } = this.props;
+      if(prevProps.newNote !== this.props.newNote) {
+        upDatedNotes = [...notes];
+        upDatedNotes.push(newNote);
+        this.setState({ notes: upDatedNotes });
       }
     }
 
-    fetchNewData() {
-      const { getData } = this.props;
-      if(getData === true) {
-        this.fetchNotes();
-      }
-      else {
-        console.log("No need to fetch.");
-      }
-    }
   
   render() {
     const { notes } = this.state;  
-    const { note } = this.props;  
     console.log(this.props);
     return (
       <div>
-        {/* Render Notes along with the props from the state but only if the state isn't empty. */}
+        {/* Render Notes along with the updates list of notes passed in as a prop from Form which is then passed on to NotesItem
+          which in return print each item as a list item and then it's of course displayed within Notes itself.
+        */}
         {
-            notes ?  <NotesItems notes={notes} note = {note} /> : console.log("There aren't any notes available.")
+            notes ?  <NotesItems notes={notes} /> : console.log("There aren't any notes available.")
         }
       </div>
     )

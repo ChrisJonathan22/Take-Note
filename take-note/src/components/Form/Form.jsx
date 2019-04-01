@@ -84,11 +84,10 @@ export default class Form extends Component {
       console.log('Data sent!');  // Log this message if the data has been sent successfully.
     });
     }
-    this.setState({ action: true });
   }  
 
   render() {
-    const { action } = this.state;
+    const { newItem } = this.state;
     return (
       <div>
         <form id="home-form">
@@ -102,7 +101,8 @@ export default class Form extends Component {
             <br/>
             <input type="button" value="Add" id="button" onClick = {this.sendData}/>
         </form>
-        <Notes getData={action} />
+        {/* Once I've added a new note pass it to Notes as a prop. */}
+        <Notes newNote={newItem} />
       </div>
     )
   }
