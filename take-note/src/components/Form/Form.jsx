@@ -6,10 +6,7 @@ export default class Form extends Component {
     constructor() {
         super();
         this.state = {
-          title: "",
-          info: "",
-          newItem: {},
-          action: false
+          newItem: {}
         };
     
         this.sendData = this.sendData.bind(this); // This method will post the data.
@@ -61,12 +58,10 @@ export default class Form extends Component {
     let note = {
       title: document.getElementById('title').value,  // Store the title value.
       info: document.getElementById('info').value,  // Store the info value.
-      timestamp: this.getDateAndTime()
+      timestamp: this.getDateAndTime() // Store the date and the time.
     };
     
-    // Log the object.
-    console.log(note);
-    this.setState({newItem: note});
+    this.setState({newItem: note}); // Replace the empty object inside the state with the newly created object.
     this.clearInputValue ();  // Clear the title & info values.
     this.resetInputPlaceholder(); // Reset the title and info placeholders.
     
