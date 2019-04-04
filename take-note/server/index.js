@@ -48,8 +48,8 @@ app.get('/api/notes', (req, res) => {   // Receive get requests to this path and
 // Parameter are accessed like so req.params.noteTitle .
 app.get('/api/notes/:noteTitle', (req, res) => {
     console.log(req.params.noteTitle);
-    if(req.params.noteTitle === 'hello') {
-    res.json({message: "Hello there! your request has been received."});
+    if(req.params.noteTitle === 'Food') {
+    res.json({message: "Hello there! your request has been received so here's your food."});
     }
 
     else {
