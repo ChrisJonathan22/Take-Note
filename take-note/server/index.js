@@ -1,6 +1,7 @@
 // Import all the modules needed.
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const cors = require('cors');
 let port = 5000;    // Set the port number.
 
@@ -47,14 +48,19 @@ app.get('/api/notes', (req, res) => {   // Receive get requests to this path and
 // would return the item found matching the parameter 'Food'.
 // Parameter are accessed like so req.params.noteTitle .
 app.get('/api/notes/:noteTitle', (req, res) => {
+    let noteTitle = req.params.noteTitle;
     console.log(req.params.noteTitle);
-    if(req.params.noteTitle === 'Food') {
-    res.json({message: "Hello there! your request has been received so here's your food."});
-    }
+    notes.findOne({ title: noteTitle }, function (err, item) {
+    
+        // if(err) res.json({errorMessage: "Item not found! Please try again."});
+        if(item) {
+            res.json({message: "Here is the item that you requested", item});
+        }
 
-    else {
-        res.json({message: "Your request doesn't match what I expected."});
-    }
+        else {
+            res.json({errorMessage: "Item not found! Please try again."});
+        }
+    });
 });
 
 app.post('/api/addNote',(req, res) => { // Receive post requests to this path and save notes accordingly.
@@ -68,11 +74,6 @@ app.post('/api/addNote',(req, res) => { // Receive post requests to this path an
         }
     });
 });
-
-
-
-// const dotenv = require('dotenv');
-// dotenv.config();
 
 // Start listening on port 5000.
 app.listen(port, console.log(`Your port is ${port}`));

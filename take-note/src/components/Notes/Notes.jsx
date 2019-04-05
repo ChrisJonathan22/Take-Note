@@ -31,6 +31,7 @@ export default class Notes extends Component {
 
     // Whent the component updates do this.
     componentDidUpdate(prevProps) {
+      let state = this.state;
       let upDatedNotes;
       const { notes } = this.state;
       const { newNote } = this.props;
@@ -41,7 +42,9 @@ export default class Notes extends Component {
         // Push the newNote to upDateNotes.
         upDatedNotes.push(newNote);
         // Update the state with the upDatedNotes array which contains all previous notes and also the newly added note.
-        this.setState({ notes: upDatedNotes });
+        this.setState({ 
+          ...state,
+          notes: upDatedNotes });
       }
     }
 
