@@ -8,6 +8,7 @@ $secondaryColor: black;
 #notes ul {
     padding-top: 50px;
     width: auto;
+    height: auto;
     // border: 1px grey solid;
 }
 
@@ -22,6 +23,13 @@ $secondaryColor: black;
 
 #notes ul li:hover {
     color: $primaryColor;
+}
+
+#noteCard {
+    border: 1px red solid;
+    width: 50%;
+    height: 100px;
+    margin: 0 auto;
 }
 
 // Notes section styles end.
