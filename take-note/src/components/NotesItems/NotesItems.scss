@@ -25,11 +25,34 @@ $secondaryColor: black;
     color: $primaryColor;
 }
 
-#noteCard {
-    border: 1px red solid;
-    width: 50%;
-    height: 100px;
+#note-card {
+    border: 1px $secondaryColor solid;
+    width: 80%;
+    height: auto;
+    background-color: white;
+    position: fixed;
+    top: 110px;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#note-title {
+    color: $primaryColor;
+    font-size: 1.3em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#note-info {
+    width: 80%;
     margin: 0 auto;
+}
+
+#how-to-close {
+    padding-top: 20px;
+    color: red;
 }
 
 // Notes section styles end.

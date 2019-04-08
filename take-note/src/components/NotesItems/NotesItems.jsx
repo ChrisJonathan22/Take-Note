@@ -9,7 +9,7 @@ export default class NotesItems extends Component {
         super(props);
         this.state = {
           noteInfo: '',
-          showCard: 0
+          showCard: false
         }
         this.fetchNote = this.fetchNote.bind(this); // Request the information for the clicked item.
         this.togglecard = this.togglecard.bind(this); // Show card when a note is clicked.
@@ -20,7 +20,6 @@ export default class NotesItems extends Component {
     fetchNote(e) {
       // Store the clicked title and remove the bullet point.
       const noteTitle = e.target.innerText.replace(/[^a-zA-Z ]/g, "");
-      const state = this.state;
 
       console.log(noteTitle);
       // This is requesting data from the api
@@ -29,24 +28,34 @@ export default class NotesItems extends Component {
       .then(res => res.json())
       // I'm saving the response to the state.
       .then(note => this.setState({ 
-        ...state,
-        noteInfo: note,
-      }, () => console.log(note)
+        noteInfo: note.item,
+      }, () => console.log(note.item)
       ));
     }
 
     togglecard() {
-      const state = this.state;
-      this.setState({ 
-        ...state,
-        showCard: 1
-       });
+      const { state, showCard } = this.state;
+      if(showCard === false) {
+        this.setState({ 
+          ...state,
+          showCard: true
+         });
+      }
+      else {
+        this.setState({ 
+          ...state,
+          showCard: false
+         });
+      }
+      
+       console.log(this.state.showCard);
     }
+
+
 
     handleClick(e) {
       this.fetchNote(e);
       this.togglecard();
-      console.log(this.state.showCard);
     }
    
   render() {
@@ -61,16 +70,20 @@ export default class NotesItems extends Component {
                 })}
                 {note ? <li key={note} onClick={this.handleClick}>{note.title}</li> : null}
             </ul>
-            {showCard !== 0 ? 
-            <div id="noteCard">
-              <h3>{noteInfo.title}</h3>
-              <p>{noteInfo.info}</p>
-            </div>
+            {showCard ?
+              noteInfo ?  
+                <div id="note-card" onClick={this.togglecard}>
+                  <h3 id="note-title">{noteInfo.title}</h3>
+                  <p id="note-info">{noteInfo.info}</p>
+                  <p id="how-to-close">Click anywhere inside this card to hide it.</p>
+                </div>
+              :
+              null  
             :
             null
             }
             {
-              1 < 0 ? <h1>1 is bigger than 0</h1> : <h1>Wrong! wrong! wrong!</h1>
+              console.log('Here is your note',noteInfo.item)
             }
         </section>
       </div>
