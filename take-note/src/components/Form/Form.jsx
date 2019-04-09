@@ -22,7 +22,9 @@ export default class Form extends Component {
     let month = date.getMonth() + 1;  // Get the month.
     let year = date.getFullYear();  // Get the year.
     let hours = date.getHours();  // Get the hours.
+    if(hours < 10) hours = `0${hours}`; // If the hour is less than 10 add 0 before it.
     let minutes = date.getMinutes();  // Get the minutes.
+    if(minutes < 10) minutes = `0${minutes}`; // If the minute is less than 10 add 0 before it.
     let dateAndTime = `${day}/${month}/${year} - ${hours}:${minutes}`;  // Concatenate the date and the time.
     return dateAndTime;
   }

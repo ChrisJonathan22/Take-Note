@@ -75,6 +75,7 @@ export default class NotesItems extends Component {
                 <div id="note-card" onClick={this.togglecard}>
                   <h3 id="note-title">{noteInfo.title}</h3>
                   <p id="note-info">{noteInfo.info}</p>
+                  <p id="note-timestamp">Timestamp: {noteInfo.timestamp}</p>
                   <p id="how-to-close">Click anywhere inside this card to hide it.</p>
                 </div>
               :

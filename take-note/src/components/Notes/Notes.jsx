@@ -57,7 +57,7 @@ export default class Notes extends Component {
           which in return print each item as a list item and then it's of course displayed within Notes itself.
         */}
         {
-            notes ?  <NotesItems notes={notes} /> : console.log("There aren't any notes available.")
+            notes ?  <NotesItems notes={notes} /> : <p>Sorry you don't seem to have any saved notes.</p>
         }
       </div>
     )

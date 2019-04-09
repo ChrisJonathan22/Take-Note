@@ -9,7 +9,6 @@ $secondaryColor: black;
     padding-top: 50px;
     width: auto;
     height: auto;
-    // border: 1px grey solid;
 }
 
 #notes ul li {
@@ -53,6 +52,10 @@ $secondaryColor: black;
 #how-to-close {
     padding-top: 20px;
     color: red;
+}
+
+#note-timestamp {
+    padding: 15px 0 0px 0;
 }
 
 // Notes section styles end.
