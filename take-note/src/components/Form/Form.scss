@@ -2,12 +2,12 @@
 
 $primaryColor: rgb(211, 195, 57);
 $secondaryColor: black;
+$warningColor: red;
 
 
 // Form styles.
 
 #home-form {
-    // text-align: center;
     width: 80%;
     margin: 0 auto;
     
@@ -38,7 +38,6 @@ $secondaryColor: black;
 
 #home-form textarea {
     width: 200px;
-    // border: 1px red solid;
 }
 
 #title, textarea {
@@ -63,3 +62,24 @@ $secondaryColor: black;
 }
 
 // Form styles end.
+
+// Field message styles.
+
+#field-message {
+    border: 1px $secondaryColor solid;
+    width: 80%;
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    top: 110px;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#field-message p {
+    padding-top: 25px;
+    color: $warningColor;
+    font-weight: 700;
+}

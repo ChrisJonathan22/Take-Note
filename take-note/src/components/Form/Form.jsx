@@ -6,7 +6,8 @@ export default class Form extends Component {
     constructor() {
         super();
         this.state = {
-          newItem: {}
+          newItem: {},
+          showMessage: false
         };
     
         this.sendData = this.sendData.bind(this); // This method will post the data.
@@ -45,7 +46,7 @@ export default class Form extends Component {
   resetBorderColor (e) {
       // e.target represents the element which triggered the event and
       // the element responsible will have its borderColor changed to lightgrey.
-      e.target.style.borderColor = "lightgrey"; 
+      e.target.style.borderColor = "lightgrey";
   }
 
   // Create a method called sendData to send notes to the database.
@@ -54,6 +55,18 @@ export default class Form extends Component {
     if(document.getElementById('title').value === "" || document.getElementById('info').value === "") { // If the title or the info is empty do this.
       document.getElementById('title').style.borderColor = "red"; // Change the title's border color to red.
       document.getElementById('info').style.borderColor = "red";  // Change the info's border color to red.
+      const state = this.state;
+      this.setState({ // When a user clicks Add if one or both fields are empty change the value of showMessage to true.
+        ...state,
+        showMessage: true
+      });
+      // Change the value of showMessage back to false after 2 seconds.
+      setTimeout(() => {
+        this.setState({
+          ...state,
+          showMessage: false
+        })
+      }, 2000);
     }
     else {  // If the title and info aren't empty do this.
         // Create an object which will store the title value, the info value and the date + time which will then be sent to the database.
@@ -84,20 +97,27 @@ export default class Form extends Component {
   }  
 
   render() {
-    const { newItem } = this.state;
+    const { newItem, showMessage } = this.state;
     return (
       <div>
         <form id="home-form">
             <label>Title<span>*</span></label>
             <br/>
-            <input type="text" name="title" id="title" placeholder="Please enter a title..." onKeyDown = {this.resetBorderColor} autoComplete="off"/>
+            <input type="text" name="title" id="title" placeholder="Please enter a title..." onKeyDown = {this.resetBorderColor} onClick = {this.resetBorderColor} autoComplete="off"/>
             <br/>
             <label>Info<span>*</span></label>
             <br/>
-            <textarea name="info" id="info" cols="30" rows="10" placeholder="Please enter some info..." onKeyDown = {this.resetBorderColor}></textarea>
+            <textarea name="info" id="info" cols="30" rows="10" placeholder="Please enter some info..." onKeyDown = {this.resetBorderColor} onClick = {this.resetBorderColor}></textarea>
             <br/>
             <input type="button" value="Add" id="button" onClick = {this.sendData}/>
         </form>
+        {showMessage ? // Display the field message when the value of showMessage is = true.
+          <div id="field-message">
+            <p>Please fill in the fields.</p>
+          </div>
+          :
+          null  
+        }
         {/* Once I've added a new note pass it to Notes as a prop. */}
         <Notes newNote={newItem} />
       </div>
