@@ -13,7 +13,7 @@ $primaryColor: rgb(211, 195, 57);
 $secondaryColor: black;
 
 
-// Mobile styles
+// Mobile styles.
 
 @media screen and (min-width: 360px) and (max-width: 767px){
 
@@ -48,6 +48,72 @@ $secondaryColor: black;
         text-decoration: none;
     }
 
+    // .dropMenu {
+    //     height: 300px;
+    //     // background-color: red !important;
+    //     position: absolute;
+    //     z-index: 100;
+    // }
+
+    .showDropDownMenu {
+        height: 200px;
+        transition: height 2s ease-out;
+    }
+
+    .hideDropDownMenu {
+        height: 50px;
+    }
+
+    .showMenuItems {
+        padding-top: 100px;
+        display: block;
+        transition: padding 100s;
+    }
+
+    .hideMenuItems {
+        display: none;
+    }
+
+    // Header styles end.
+}
+
+// Mobile styles end.
+
+// Tablet styles.
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+     // Header styles.
+
+     #header {
+        background-color: $primaryColor;
+        height: 80px;
+        width: 100%;
+        overflow: hidden;
+        position: fixed;
+    } 
+
+    #mobile-menu-icon {
+        float: right;
+        font-size: 3.5em;
+        padding-top: 7px;
+        padding-right: 7px; 
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul li {
+        padding-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    nav ul li a {
+        color: $secondaryColor;
+        text-decoration: none;
+        font-size: 2em;
+    }
+
     .dropMenu {
         height: 300px;
         background-color: red;
@@ -57,5 +123,3 @@ $secondaryColor: black;
 
     // Header styles end.
 }
-
-// Mobile styles end.

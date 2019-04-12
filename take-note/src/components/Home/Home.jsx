@@ -3,10 +3,6 @@ import Form from '../Form/Form';
 import './Home.scss';
 
 export default class Home extends Component {
-  constructor() {
-    super();
-    }
-
 
   render() {
     return (
