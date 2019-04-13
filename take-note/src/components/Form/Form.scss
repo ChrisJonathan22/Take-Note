@@ -83,3 +83,89 @@ $warningColor: red;
     color: $warningColor;
     font-weight: 700;
 }
+
+// Field message styles end.
+
+// Tablet styles.
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    // Form styles.
+
+    #home-form {
+        width: 100%;
+        margin: 0 auto;
+        border: 1px red solid;
+    }
+
+    #home-form input, #home-form textarea {
+        margin-top: 10px;
+        margin-left: 30px;
+        border-radius: 3px;
+        border: 1px lightgrey solid;
+        font-size: 0.9em;
+    }
+
+    #home-form label {
+        font-weight: 800;
+        margin-left: 30px;
+        border-radius: 3px;
+    }
+
+    #home-form label span {
+        color: red;
+    }
+
+    #home-form input {
+        height: 30px;
+        width: 200px;
+    }
+
+    #home-form textarea {
+        width: 200px;
+    }
+
+    #title, textarea {
+        margin-bottom: 10px;
+    }
+
+    #title::placeholder, textarea::placeholder {
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    #button {
+        border: 0 !important;
+        border-radius: 5px;
+        background-color: $primaryColor;
+        color: white;
+        width: 60px !important;
+        height: 40px !important;
+        font-size: 20px;
+        font-weight: 900;
+        margin-left: 105px !important;
+    }
+
+    // Form styles end.
+
+    // Field message styles.
+
+    #field-message {
+        border: 1px $secondaryColor solid;
+        width: 80%;
+        height: 50px;
+        background-color: white;
+        position: fixed;
+        top: 110px;
+        left: 10%;
+        right: 10%;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    #field-message p {
+        padding-top: 25px;
+        color: $warningColor;
+        font-weight: 700;
+    }
+}
+    // Tablet styles end.
