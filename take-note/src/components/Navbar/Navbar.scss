@@ -108,11 +108,24 @@ $secondaryColor: black;
         font-size: 2em;
     }
 
-    .dropMenu {
-        height: 300px;
-        background-color: red;
-        position: absolute;
-        z-index: 100;
+    .showDropDownMenu {
+        height: 250px !important;
+        transition: height 1s ease-out;
+    }
+
+    .hideDropDownMenu {
+        height: 50px;
+        transition: height 1s ease-out;
+    }
+
+    .showMenuItems {
+        padding-top: 100px;
+        display: block;
+        transition: padding 100s;
+    }
+
+    .hideMenuItems {
+        display: none;
     }
 
     // Header styles end.
