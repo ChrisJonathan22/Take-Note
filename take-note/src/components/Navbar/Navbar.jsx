@@ -18,14 +18,8 @@ export default class Navbar extends Component {
 
     if(this.state.dropMenuStatus === false) { // If the value of dropMenu within the state is false do the following.
       this.setState({dropMenuStatus: true});
-      console.log(this.state.dropMenuStatus);
-      // menuItems.style.paddingTop = "100px";
-      // menuItems.style.display = "block";
-      // menuItems.style.transition = "padding 100s";
       menuItems.className = 'showMenuItems';
       header.className = 'showDropDownMenu';
-      // header.style.height = "200px";
-      // header.style.transition = "height 2s";
     }
 
     else {
@@ -33,8 +27,6 @@ export default class Navbar extends Component {
       console.log(this.state.dropMenuStatus);
       menuItems.className = 'hideMenuItems';
       header.className = 'hideDropDownMenu';
-      // menuItems.style.display = "none";
-      // header.style.height = "50px";
     }
   }
   render() {
@@ -45,10 +37,10 @@ export default class Navbar extends Component {
               <nav>
                   <ul id="menu-items">
                       <li>
-                        <a><NavLink exact to ='/'>Home</NavLink></a>
+                        <NavLink exact to ='/'>Home</NavLink>
                       </li>
                       <li>
-                      <a><NavLink exact to ='/about'>About</NavLink></a>
+                        <NavLink exact to ='/about'>About</NavLink>
                       </li>
                   </ul>
               </nav>
