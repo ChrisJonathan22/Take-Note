@@ -5,6 +5,10 @@ $secondaryColor: black;
 $warningColor: red;
 
 
+// Mobile styles.
+
+@media screen and (min-width: 360px) and (max-width: 767px){
+
 // Form styles.
 
 #home-form {
@@ -86,6 +90,8 @@ $warningColor: red;
 
 // Field message styles end.
 
+}
+
 // Tablet styles.
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
@@ -102,7 +108,7 @@ $warningColor: red;
         margin-left: 30px;
         border-radius: 3px;
         border: 1px lightgrey solid;
-        font-size: 0.9em;
+        font-size: 1.2em;
     }
 
     #home-form label {

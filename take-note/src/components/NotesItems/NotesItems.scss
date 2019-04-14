@@ -3,6 +3,11 @@
 $primaryColor: rgb(211, 195, 57);
 $secondaryColor: black;
 
+
+// Mobile styles.
+
+@media screen and (min-width: 360px) and (max-width: 767px){
+
 // Notes section styles.
 
 #notes ul {
@@ -57,5 +62,78 @@ $secondaryColor: black;
 #note-timestamp {
     padding: 15px 0 0px 0;
 }
+}
+// Notes section styles end.
+
+
+
+// Tablet styles.
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    // Notes section styles.
+
+// #notes {
+//     border: 1px red solid;
+//     width: 200% !important;
+//     margin: 0 auto;
+// }
+
+#notes ul {
+    padding-top: 50px;
+    width: auto;
+    height: auto;
+    width: 100%;
+    border: 1px red solid;
+}
+
+#notes ul li {
+    text-align: left;
+    list-style: none;
+    padding-bottom: 10px;
+    padding-left: 70px;
+    color: $secondaryColor;
+    font-size: 1.5em;
+}
+
+#notes ul li:hover {
+    color: $primaryColor;
+}
+
+#note-card {
+    border: 1px $secondaryColor solid;
+    width: 80%;
+    height: auto;
+    background-color: white;
+    position: fixed;
+    top: 110px;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#note-title {
+    color: $primaryColor;
+    font-size: 1.3em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#note-info {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#how-to-close {
+    padding-top: 20px;
+    color: red;
+}
+
+#note-timestamp {
+    padding: 15px 0 0px 0;
+}
 
 // Notes section styles end.
+
+}
+    // Tablet styles end.
