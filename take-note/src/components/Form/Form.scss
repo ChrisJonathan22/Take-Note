@@ -99,8 +99,9 @@ $warningColor: red;
 
     #home-form {
         width: 100%;
-        margin: 0 auto;
-        border: 1px red solid;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 30px;
     }
 
     #home-form input, #home-form textarea {
@@ -108,7 +109,7 @@ $warningColor: red;
         margin-left: 30px;
         border-radius: 3px;
         border: 1px lightgrey solid;
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
     #home-form label {
@@ -123,11 +124,11 @@ $warningColor: red;
 
     #home-form input {
         height: 30px;
-        width: 200px;
+        width: 330px;
     }
 
     #home-form textarea {
-        width: 200px;
+        width: 330px;
     }
 
     #title, textarea {

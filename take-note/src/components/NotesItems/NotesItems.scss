@@ -72,18 +72,15 @@ $secondaryColor: black;
 
     // Notes section styles.
 
-// #notes {
-//     border: 1px red solid;
-//     width: 200% !important;
-//     margin: 0 auto;
-// }
+#notes {
+    // width: 100% !important;
+    // text-align: center;
+}
 
 #notes ul {
     padding-top: 50px;
-    width: auto;
     height: auto;
-    width: 100%;
-    border: 1px red solid;
+    width: 100% !important;
 }
 
 #notes ul li {
