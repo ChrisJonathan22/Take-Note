@@ -5,17 +5,7 @@ $secondaryColor: black;
 
 // Variables end.
 
-// Mobile styles.
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-
-    // Push down will push the content slightly down so that it's not partially covered by the menu bar.
-
-    #push-down {
-        padding-bottom: 47px;
-    }
-    // Push down styles end.    
-
+// General styles.
     // Container styles.
 
     #container {
@@ -24,11 +14,23 @@ $secondaryColor: black;
     }
 
     // End of Container styles.
+// General styles end.
 
-    #home-title {
-        padding: 20px 0 20px 0;
-        text-align: center;
-    }
+// Mobile styles.
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    // Push down will push the content slightly down so that it's not partially covered by the menu bar.
+
+        #push-down {
+            padding-bottom: 47px;
+        }
+        // Push down styles end.    
+
+        #home-title {
+            padding: 20px 0 20px 0;
+            text-align: center;
+        }
 }
 // Mobile styles end.
 
@@ -43,14 +45,6 @@ $secondaryColor: black;
     }
     // Push down styles end.    
     
-    // Container styles.
-    
-    #container {
-        width: 100% !important;
-        border: 1px blue solid;
-    }
-    
-    // End of Container styles.
     
     #home-title {
         padding: 20px 0 20px 0;
