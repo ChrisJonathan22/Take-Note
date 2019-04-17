@@ -146,11 +146,11 @@ $warningColor: red;
         border-radius: 5px;
         background-color: $primaryColor;
         color: white;
-        width: 60px !important;
-        height: 40px !important;
-        font-size: 20px;
+        width: 80px !important;
+        height: 60px !important;
+        font-size: 2em !important;
         font-weight: 900;
-        margin-left: 105px !important;
+        margin-left: 150px !important;
     }
 
     // Form styles end.
@@ -173,6 +173,7 @@ $warningColor: red;
     #field-message p {
         padding-top: 25px;
         color: $warningColor;
+        font-size: 1.5em;
         font-weight: 700;
     }
 }

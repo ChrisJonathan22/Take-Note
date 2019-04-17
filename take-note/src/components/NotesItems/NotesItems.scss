@@ -73,8 +73,7 @@ $secondaryColor: black;
     // Notes section styles.
 
 #notes {
-    // width: 100% !important;
-    // text-align: center;
+    padding-left: 50px;
 }
 
 #notes ul {
@@ -89,7 +88,7 @@ $secondaryColor: black;
     padding-bottom: 10px;
     padding-left: 70px;
     color: $secondaryColor;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 #notes ul li:hover {
@@ -111,7 +110,7 @@ $secondaryColor: black;
 
 #note-title {
     color: $primaryColor;
-    font-size: 1.3em;
+    font-size: 2em;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -119,16 +118,20 @@ $secondaryColor: black;
 #note-info {
     width: 80%;
     margin: 0 auto;
+    font-size: 1.5em;
+}
+
+#note-timestamp {
+    font-size: 1.5em;
+    padding: 15px 0 0px 0;
 }
 
 #how-to-close {
     padding-top: 20px;
     color: red;
+    font-size: 1.5em;
 }
 
-#note-timestamp {
-    padding: 15px 0 0px 0;
-}
 
 // Notes section styles end.
 
