@@ -159,7 +159,7 @@ $warningColor: red;
 
     #field-message {
         border: 1px $secondaryColor solid;
-        width: 80%;
+        width: 80% !important;
         height: 50px;
         background-color: white;
         position: fixed;
