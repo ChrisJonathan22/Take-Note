@@ -54,8 +54,9 @@ $secondaryColor: black;
         font-size: 3.5em;
     }
 
-    #container {
-        margin-left: 80px;
+    #container div {
+        overflow: hidden;
+        width: 100%;
     }
 }
     // Tablet styles end.

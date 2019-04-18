@@ -72,68 +72,65 @@ $secondaryColor: black;
 
     // Notes section styles.
 
-#notes {
-    padding-left: 50px;
-}
+    #notes ul {
+        padding-top: 50px;
+        height: auto;
+        width: 60%;
+        margin: 0 auto;
+    }
 
-#notes ul {
-    padding-top: 50px;
-    height: auto;
-    width: 100% !important;
-}
+    #notes ul li {
+        text-align: left;
+        list-style: none;
+        padding-bottom: 10px;
+        padding-left: 70px;
+        color: $secondaryColor;
+        font-size: 2em;
+    }
 
-#notes ul li {
-    text-align: left;
-    list-style: none;
-    padding-bottom: 10px;
-    padding-left: 70px;
-    color: $secondaryColor;
-    font-size: 2em;
-}
+    #notes ul li:hover {
+        color: $primaryColor;
+    }
 
-#notes ul li:hover {
-    color: $primaryColor;
-}
+    #note-card {
+        border: 1px $secondaryColor solid;
+        height: auto;
+        width: 80% !important;
+        background-color: white;
+        position: fixed;
+        top: 110px;
+        left: 10%;
+        right: 10%;
+        text-align: center;
+        padding-bottom: 15px;
+    }
 
-#note-card {
-    border: 1px $secondaryColor solid;
-    width: 80%;
-    height: auto;
-    background-color: white;
-    position: fixed;
-    top: 110px;
-    left: 10%;
-    right: 10%;
-    text-align: center;
-    padding-bottom: 15px;
-}
+    #note-title {
+        color: $primaryColor;
+        font-size: 2em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
-#note-title {
-    color: $primaryColor;
-    font-size: 2em;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+    #note-info {
+        width: 80%;
+        margin: 0 auto;
+        font-size: 1.5em;
+    }
 
-#note-info {
-    width: 80%;
-    margin: 0 auto;
-    font-size: 1.5em;
-}
+    #note-timestamp {
+        font-size: 1.5em;
+        padding: 15px 0 0px 0;
+    }
 
-#note-timestamp {
-    font-size: 1.5em;
-    padding: 15px 0 0px 0;
-}
-
-#how-to-close {
-    padding-top: 20px;
-    color: red;
-    font-size: 1.5em;
-}
+    #how-to-close {
+        padding-top: 20px;
+        color: red;
+        font-size: 1.5em;
+    }
 
 
-// Notes section styles end.
+    // Notes section styles end.
 
 }
     // Tablet styles end.
