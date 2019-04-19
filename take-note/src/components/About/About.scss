@@ -1,0 +1,25 @@
+// Variables.
+
+$primaryColor: rgb(211, 195, 57);
+$secondaryColor: black;
+
+// Variables end.
+
+
+// General styles.
+#about-title {
+    font-size: 2em;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#about-para-container ul {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#about-para-container ul li {
+   padding-bottom: 10px;
+}
+// General styles end.
