@@ -4,6 +4,30 @@ $primaryColor: rgb(211, 195, 57);
 $secondaryColor: black;
 
 
+// General styles.
+
+#delete-note {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: rgb(221, 11, 81);
+    color: white;
+}
+
+#delete-note:hover {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #9D0038;
+}
+
+
+// End of general styles.
+
+
 // Mobile styles.
 
 @media screen and (min-width: 360px) and (max-width: 767px){

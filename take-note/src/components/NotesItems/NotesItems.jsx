@@ -14,6 +14,7 @@ export default class NotesItems extends Component {
         this.fetchNote = this.fetchNote.bind(this); // Request the information for the clicked item.
         this.togglecard = this.togglecard.bind(this); // Show card when a note is clicked.
         this.handleClick = this.handleClick.bind(this); // This method will trigger both fetchNote and toggle Card.
+        this.deleteNote = this.deleteNote.bind(this); // This method will delete a note.
     }
 
 
@@ -57,6 +58,11 @@ export default class NotesItems extends Component {
       this.fetchNote(e);
       this.togglecard();
     }
+
+    deleteNote() {
+      const { noteInfo } = this.state;
+      console.log(noteInfo);
+    }
    
   render() {
     const { showCard, noteInfo } = this.state;
@@ -77,6 +83,7 @@ export default class NotesItems extends Component {
                   <p id="note-info">{noteInfo.info}</p>
                   <p id="note-timestamp">Timestamp: {noteInfo.timestamp}</p>
                   <p id="how-to-close">Click anywhere inside this card to hide it.</p>
+                  <button id="delete-note" onClick={this.deleteNote}>Delete</button>
                 </div>
               :
               null  
