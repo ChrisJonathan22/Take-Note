@@ -9,7 +9,8 @@ export default class NotesItems extends Component {
         super(props);
         this.state = {
           noteInfo: '',
-          showCard: false
+          showCard: false,
+          apiUrl: 'http://localhost:5000/api/'
         }
         this.fetchNote = this.fetchNote.bind(this); // Request the information for the clicked item.
         this.togglecard = this.togglecard.bind(this); // Show card when a note is clicked.
@@ -19,12 +20,14 @@ export default class NotesItems extends Component {
 
 
     fetchNote(e) {
+
+      const { apiUrl } = this.state;
       // Store the clicked title and remove the bullet point.
       const noteTitle = e.target.innerText.replace(/[^a-zA-Z ]/g, "");
 
       console.log(noteTitle);
       // This is requesting data from the api
-      fetch(`http://localhost:5000/api/notes/${noteTitle}`)
+      fetch(`${apiUrl}notes/${noteTitle}`)
       // I'm requesting data, turning the response which will be every found note to json.
       .then(res => res.json())
       // I'm saving the response to the state.
@@ -60,8 +63,13 @@ export default class NotesItems extends Component {
     }
 
     deleteNote() {
-      const { noteInfo } = this.state;
+      const { apiUrl, noteInfo } = this.state;
       console.log(noteInfo);
+      // Create a fetch 'post' request to delete a note.
+      fetch(`${apiUrl}deleteNote/${noteInfo.title}`)
+      .then((res) => {
+        console.log('Note deleted!'); // Log this message if the note has been deleted.
+      });
     }
    
   render() {

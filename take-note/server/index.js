@@ -51,10 +51,23 @@ app.get('/api/notes/:noteTitle', (req, res) => {
     console.log(req.params.noteTitle);
     notes.findOne({ title: noteTitle }, function (err, item) {
         if(item) {
-            res.json({message: "Here is the item that you requested", item});
+            res.json({ message: "Here is the item that you requested", item });
         }
         else {
-            res.json({errorMessage: "Item not found! Please try again."});
+            res.json({ errorMessage: "Item not found! Please try again." });
+        }
+    });
+});
+
+app.get('/api/deleteNote:noteTitle', (req, res) => {
+    let noteTitle = req.params.noteTitle;
+    notes.findOneAndDelete({ title: noteTitle }, (err, item) => {
+        if(item) {
+            console.log(item);
+            res.json({ message: "Item deleted!" });
+        }
+        else {
+            res.json({ errorMessage: "Item not found!" });
         }
     });
 });
