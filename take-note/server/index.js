@@ -59,7 +59,8 @@ app.get('/api/notes/:noteTitle', (req, res) => {
     });
 });
 
-app.get('/api/deleteNote:noteTitle', (req, res) => {
+// Delete notes
+app.get('/api/deleteNote/:noteTitle', (req, res) => {
     let noteTitle = req.params.noteTitle;
     notes.findOneAndDelete({ title: noteTitle }, (err, item) => {
         if(item) {
