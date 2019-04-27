@@ -16,6 +16,13 @@ $secondaryColor: black;
 
     // End of Container styles.
 
+    // Home title styles.
+    #home-title {
+        padding: 20px 0 20px 0;
+        text-align: center;
+    }
+    // Home title styles end.
+
 // General styles end.
 
 // Mobile styles.
@@ -28,11 +35,6 @@ $secondaryColor: black;
             padding-bottom: 47px;
         }
         // Push down styles end.    
-
-        #home-title {
-            padding: 20px 0 20px 0;
-            text-align: center;
-        }
 }
 // Mobile styles end.
 
@@ -49,8 +51,6 @@ $secondaryColor: black;
     
     
     #home-title {
-        padding: 20px 0 20px 0;
-        text-align: center;
         font-size: 3.5em;
     }
 
