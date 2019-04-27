@@ -24,6 +24,16 @@ $secondaryColor: black;
     background-color: #9D0038;
 }
 
+// Notes section styles.
+
+#notes ul {
+    padding-top: 50px;
+    width: auto;
+    height: auto;
+}
+
+// Notes section styles end.
+
 
 // End of general styles.
 
@@ -97,8 +107,6 @@ $secondaryColor: black;
     // Notes section styles.
 
     #notes ul {
-        padding-top: 50px;
-        height: auto;
         width: 60%;
         margin: 0 auto;
     }
