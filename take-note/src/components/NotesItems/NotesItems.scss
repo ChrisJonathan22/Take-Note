@@ -30,6 +30,7 @@ $secondaryColor: black;
     padding-top: 50px;
     width: auto;
     height: auto;
+
     li {
         text-align: left;
         list-style: none;
@@ -51,6 +52,7 @@ $secondaryColor: black;
     right: 10%;
     text-align: center;
     padding-bottom: 15px;
+
     #note-title {
         color: $primaryColor;
         font-size: 1.3em;
@@ -105,6 +107,7 @@ $secondaryColor: black;
     #notes ul {
         width: 60%;
         margin: 0 auto;
+        
         li {
             font-size: 2em;
         }
