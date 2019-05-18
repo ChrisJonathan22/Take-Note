@@ -24,7 +24,6 @@ export default class Navbar extends Component {
 
     else {
       this.setState({dropMenuStatus: false});
-      console.log(this.state.dropMenuStatus);
       menuItems.className = 'hideMenuItems';
       header.className = 'hideDropDownMenu';
     }
