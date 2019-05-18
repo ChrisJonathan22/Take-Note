@@ -13,6 +13,28 @@ $primaryColor: rgb(211, 195, 57);
 $secondaryColor: black;
 
 
+// General styles
+
+.showDropDownMenu {
+    height: 200px !important;
+    transition: height 1s ease-out;
+}
+
+.hideDropDownMenu {
+    height: 50px;
+    transition: height 1s ease-out;
+}
+
+.showMenuItems {
+    padding-top: 100px;
+    display: block;
+    transition: padding 100s;
+}
+
+.hideMenuItems {
+    display: none;
+}
+
 // Mobile styles.
 
 @media screen and (min-width: 320px) and (max-width: 767px){
@@ -25,47 +47,27 @@ $secondaryColor: black;
         width: 100%;
         overflow: hidden;
         position: fixed;
-    } 
 
-    #mobile-menu-icon {
-        float: right;
-        font-size: 2.5em;
-        padding-top: 5px;
-        padding-right: 5px; 
-    }
+        #mobile-menu-icon {
+            float: right;
+            font-size: 2.5em;
+            padding-top: 5px;
+            padding-right: 5px; 
+        }
+    } 
 
     nav ul {
         display: none;
-    }
 
-    nav ul li {
-        padding-left: 20px;
-        margin-bottom: 30px;
-    }
+        li {
+            padding-left: 20px;
+            margin-bottom: 30px;
 
-    nav ul li a {
-        color: $secondaryColor;
-        text-decoration: none;
-    }
-
-    .showDropDownMenu {
-        height: 200px !important;
-        transition: height 1s ease-out;
-    }
-
-    .hideDropDownMenu {
-        height: 50px;
-        transition: height 1s ease-out;
-    }
-
-    .showMenuItems {
-        padding-top: 100px;
-        display: block;
-        transition: padding 100s;
-    }
-
-    .hideMenuItems {
-        display: none;
+            a {
+                color: $secondaryColor;
+                text-decoration: none;
+            }
+        }
     }
 
     // Header styles end.
@@ -84,28 +86,28 @@ $secondaryColor: black;
         width: 100%;
         overflow: hidden;
         position: fixed;
-    } 
 
-    #mobile-menu-icon {
-        float: right;
-        font-size: 3.5em;
-        padding-top: 7px;
-        padding-right: 7px; 
-    }
+        #mobile-menu-icon {
+            float: right;
+            font-size: 3.5em;
+            padding-top: 7px;
+            padding-right: 7px; 
+        }
+    } 
 
     nav ul {
         display: none;
-    }
 
-    nav ul li {
-        padding-left: 20px;
-        margin-bottom: 30px;
-    }
+        li {
+            padding-left: 20px;
+            margin-bottom: 30px;
 
-    nav ul li a {
-        color: $secondaryColor;
-        text-decoration: none;
-        font-size: 2em;
+            a {
+                color: $secondaryColor;
+                text-decoration: none;
+                font-size: 2em;
+            }
+        }
     }
 
     .showDropDownMenu {
@@ -113,20 +115,19 @@ $secondaryColor: black;
         transition: height 1s ease-out;
     }
 
-    .hideDropDownMenu {
-        height: 50px;
-        transition: height 1s ease-out;
-    }
-
-    .showMenuItems {
-        padding-top: 100px;
-        display: block;
-        transition: padding 100s;
-    }
-
-    .hideMenuItems {
-        display: none;
-    }
-
     // Header styles end.
+}
+
+// Desktop styles.
+
+@media screen and (min-width: 1025px) {
+    // Header styles.
+    #header {
+        height: 100px;
+        background-color: $primaryColor;
+
+        #mobile-menu-icon {
+            display: none;
+        }
+    }
 }
