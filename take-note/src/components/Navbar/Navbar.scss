@@ -11,6 +11,7 @@
 
 $primaryColor: rgb(211, 195, 57);
 $secondaryColor: black;
+$tertiaryColor: #ffffff;
 
 
 // General styles
@@ -125,9 +126,38 @@ $secondaryColor: black;
     #header {
         height: 100px;
         background-color: $primaryColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         #mobile-menu-icon {
             display: none;
+        }
+
+        nav {
+            ul {
+                li {
+                    list-style-type: none;
+                    display: inline-block;
+                    padding: 0 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: $secondaryColor;
+                        font-size: 2em;
+
+                        &:hover {
+                            color: $tertiaryColor;
+                        }
+                    }
+                }
+            }
+
+            .active {
+                color: $tertiaryColor;
+                border: 1px $secondaryColor dashed;
+                padding: 5px;
+            }
         }
     }
 }
