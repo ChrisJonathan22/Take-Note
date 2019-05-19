@@ -7,88 +7,91 @@ $warningColor: red;
 
 // Mobile styles.
 
-@media screen and (min-width: 320px) and (max-width: 767px){
+@media screen and (min-width: 320px) and (max-width: 767px) {
 
-// Form styles.
+    // Form styles.
 
-#home-form {
-    width: 70%;
-    margin: 0 auto;
-    
-}
+    #home-form {
+        width: 70%;
+        margin: 0 auto;
 
-#home-form input, #home-form textarea {
-    margin-top: 10px;
-    margin-left: 30px;
-    border-radius: 3px;
-    border: 1px lightgrey solid;
-    font-size: 0.9em;
-}
+    }
 
-#home-form label {
-    font-weight: 800;
-    margin-left: 30px;
-    border-radius: 3px;
-}
+    #home-form input,
+    #home-form textarea {
+        margin-top: 10px;
+        margin-left: 30px;
+        border-radius: 3px;
+        border: 1px lightgrey solid;
+        font-size: 0.9em;
+    }
 
-#home-form label span {
-    color: red;
-}
+    #home-form label {
+        font-weight: 800;
+        margin-left: 30px;
+        border-radius: 3px;
+    }
 
-#home-form input {
-    height: 30px;
-    width: 200px;
-}
+    #home-form label span {
+        color: red;
+    }
 
-#home-form textarea {
-    width: 200px;
-}
+    #home-form input {
+        height: 30px;
+        width: 200px;
+    }
 
-#title, textarea {
-    margin-bottom: 10px;
-}
+    #home-form textarea {
+        width: 200px;
+    }
 
-#title::placeholder, textarea::placeholder {
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-}
+    #title,
+    textarea {
+        margin-bottom: 10px;
+    }
 
-#button {
-    border: 0 !important;
-    border-radius: 5px;
-    background-color: $primaryColor;
-    color: white;
-    width: 60px !important;
-    height: 40px !important;
-    font-size: 20px;
-    font-weight: 900;
-    margin-left: 105px !important;
-}
+    #title::placeholder,
+    textarea::placeholder {
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+    }
 
-// Form styles end.
+    #button {
+        border: 0 !important;
+        border-radius: 5px;
+        background-color: $primaryColor;
+        color: white;
+        width: 60px !important;
+        height: 40px !important;
+        font-size: 20px;
+        font-weight: 900;
+        margin-left: 105px !important;
+    }
 
-// Field message styles.
+    // Form styles end.
 
-#field-message {
-    border: 1px $secondaryColor solid;
-    width: 80%;
-    height: 50px;
-    background-color: white;
-    position: fixed;
-    top: 110px;
-    left: 10%;
-    right: 10%;
-    text-align: center;
-    padding-bottom: 15px;
-}
+    // Field message styles.
 
-#field-message p {
-    padding-top: 25px;
-    color: $warningColor;
-    font-weight: 700;
-}
+    #field-message {
+        border: 1px $secondaryColor solid;
+        width: 80%;
+        height: 50px;
+        background-color: white;
+        position: fixed;
+        top: 110px;
+        left: 10%;
+        right: 10%;
+        text-align: center;
+        padding-bottom: 15px;
+    }
 
-// Field message styles end.
+    #field-message p {
+        padding-top: 25px;
+        color: $warningColor;
+        font-weight: 700;
+    }
+
+    // Field message styles end.
 
 }
 
@@ -104,7 +107,8 @@ $warningColor: red;
         margin-top: 30px;
     }
 
-    #home-form input, #home-form textarea {
+    #home-form input,
+    #home-form textarea {
         margin-top: 10px;
         margin-left: 30px;
         border-radius: 3px;
@@ -132,11 +136,13 @@ $warningColor: red;
         width: 330px;
     }
 
-    #title, textarea {
+    #title,
+    textarea {
         margin-bottom: 10px;
     }
 
-    #title::placeholder, textarea::placeholder {
+    #title::placeholder,
+    textarea::placeholder {
         color: black;
         font-family: 'Courier New', Courier, monospace;
     }
@@ -177,15 +183,85 @@ $warningColor: red;
         font-weight: 700;
     }
 }
-    // Tablet styles end.
+
+// Tablet styles end.
 
 
-    // Desktop styles.
+// Desktop styles.
 
-    @media screen and (min-width: 1025px) {
-        #content-container {
-            border: 1px red solid;
-            width: 80% !important;
-            margin: 0 auto !important;
+@media screen and (min-width: 1025px) {
+    #content-container {
+        border: 1px grey solid;
+        width: 80% !important;
+        margin: 0 auto !important;
+        display: flex;
+
+        // Form styles.
+        #form-container {
+            width: 50% !important;
+            height: 50vh;
+            border-right: 1px grey solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            #home-form {
+
+                input,
+                textarea {
+                    margin-top: 10px;
+                    margin-left: 30px;
+                    border-radius: 3px;
+                    border: 1px lightgrey solid;
+                    font-size: 0.9em;
+                }
+
+                label {
+                    font-size: 1.5em;
+                    font-weight: 800;
+                    margin-left: 30px;
+                    border-radius: 3px;
+
+                    span {
+                        color: red;
+                    }
+                }
+
+                input {
+                    height: 40px;
+                    width: 200px;
+                }
+
+                textarea {
+                    width: 200px;
+                }
+
+                #title,
+                textarea {
+                    margin-bottom: 10px;
+                }
+
+                #title::placeholder,
+                textarea::placeholder {
+                    color: black;
+                    font-family: 'Courier New', Courier, monospace;
+                }
+
+                #button {
+                    border: 0 !important;
+                    border-radius: 5px;
+                    background-color: $primaryColor;
+                    color: white;
+                    width: 60px !important;
+                    height: 40px !important;
+                    font-size: 20px;
+                    font-weight: 900;
+                    margin-left: 105px !important;
+                }
+            }
+        }
+        #home-note-container {
+            width: 50% !important;
         }
     }
+}
