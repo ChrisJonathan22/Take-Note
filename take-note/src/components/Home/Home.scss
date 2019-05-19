@@ -59,3 +59,16 @@ $secondaryColor: black;
     }
 }
     // Tablet styles end.
+
+
+    // Desktop styles.
+    @media screen and (min-width: 1025px) {
+
+        // Push down will push the content slightly down so that it's not partially covered by the menu bar.
+    
+        #container div {
+            overflow: hidden;
+            width: 100% !important;
+            border: 1px red blue;
+        }
+    }

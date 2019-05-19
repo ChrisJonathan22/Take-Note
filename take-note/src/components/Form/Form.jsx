@@ -101,24 +101,26 @@ export default class Form extends Component {
     return (
       <div>
         <div id="content-container">
-          <form id="home-form">
-              <label>Title<span>*</span></label>
-              <br/>
-              <input type="text" name="title" id="title" placeholder="Please enter a title..." onKeyDown = {this.resetBorderColor} onClick = {this.resetBorderColor} autoComplete="off"/>
-              <br/>
-              <label>Info<span>*</span></label>
-              <br/>
-              <textarea name="info" id="info" cols="30" rows="10" placeholder="Please enter some info..." onKeyDown = {this.resetBorderColor} onClick = {this.resetBorderColor}></textarea>
-              <br/>
-              <input type="button" value="Add" id="button" onClick = {this.sendData}/>
-          </form>
-          {showMessage ? // Display the field message when the value of showMessage is = true.
-            <div id="field-message">
-              <p>Please fill in the fields.</p>
-            </div>
-            :
-            null  
-          }
+          <div id="form-container">
+            <form id="home-form">
+                <label>Title<span>*</span></label>
+                <br/>
+                <input type="text" name="title" id="title" placeholder="Please enter a title..." onKeyDown = {this.resetBorderColor} onClick = {this.resetBorderColor} autoComplete="off"/>
+                <br/>
+                <label>Info<span>*</span></label>
+                <br/>
+                <textarea name="info" id="info" cols="30" rows="10" placeholder="Please enter some info..." onKeyDown = {this.resetBorderColor} onClick = {this.resetBorderColor}></textarea>
+                <br/>
+                <input type="button" value="Add" id="button" onClick = {this.sendData}/>
+            </form>
+            {showMessage ? // Display the field message when the value of showMessage is = true.
+              <div id="field-message">
+                <p>Please fill in the fields.</p>
+              </div>
+              :
+              null  
+            }
+          </div>
           {/* Once I've added a new note pass it to Notes as a prop. */}
           <div id="home-note-container">
             <Notes newNote={newItem} />
