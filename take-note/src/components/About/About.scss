@@ -17,10 +17,10 @@ $secondaryColor: black;
 #about-para-container ul {
     width: 70%;
     margin: 0 auto;
-}
 
-#about-para-container ul li {
-   padding-bottom: 10px;
+    li {
+        padding-bottom: 10px;
+     }
 }
 // General styles end.
 
@@ -39,3 +39,12 @@ $secondaryColor: black;
     }
 }
 // Tablet styles end.
+
+// Desktop styles.
+@media screen and (min-width: 1025px) {
+    #about-para-container ul {
+        li {
+            font-size: 2em;
+        }
+     }
+}
