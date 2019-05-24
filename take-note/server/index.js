@@ -36,7 +36,6 @@ app.get('/api/notes', (req, res) => {   // Receive get requests to this path and
     notes.find((err, notes) => {
         if (err) console.log(err);  // If there is an error log it out.
         else {
-            console.log("Notes were requested...");
             return res.json(notes); // Return the notes found.
         }
     });
@@ -48,7 +47,6 @@ app.get('/api/notes', (req, res) => {   // Receive get requests to this path and
 // Parameter are accessed like so req.params.noteTitle .
 app.get('/api/notes/:noteTitle', (req, res) => {
     let noteTitle = req.params.noteTitle;
-    console.log(req.params.noteTitle);
     notes.findOne({ title: noteTitle }, function (err, item) {
         if(item) {
             res.json({ message: "Here is the item that you requested", item });
@@ -64,7 +62,6 @@ app.get('/api/deleteNote/:noteTitle', (req, res) => {
     let noteTitle = req.params.noteTitle;
     notes.findOneAndDelete({ title: noteTitle }, (err, item) => {
         if(item) {
-            console.log(item);
             res.json({ message: "Item deleted!" });
         }
         else {
@@ -76,12 +73,8 @@ app.get('/api/deleteNote/:noteTitle', (req, res) => {
 app.post('/api/addNote',(req, res) => { // Receive post requests to this path and save notes accordingly.
     // Create a new note and populate it with the data received.
     let note = new notes({ title: req.body.title, info: req.body.info, timestamp: req.body.timestamp });    
-    console.log(note);
     note.save((err, notes) => { // Save the new note.
         if(err) console.log(err);   // If there is an error log it out.
-        else {
-            console.log("New note successfully added...");
-        }
     });
 });
 
